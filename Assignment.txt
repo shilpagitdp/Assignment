@@ -1,0 +1,488 @@
+q1
+
+using System;
+public class Program
+{
+    public static void Main()
+    {
+        char l1, l2, l3;
+
+        Console.Write("Input letter 1 : ");
+        l1 = Convert.ToChar(Console.ReadLine());
+
+        Console.Write("Input letter 2 : ");
+        l2 = Convert.ToChar(Console.ReadLine());
+
+        Console.Write("Input letter 3 : ");
+        l3 = Convert.ToChar(Console.ReadLine());
+
+        Console.WriteLine("{0} {1} {2}", l3, l2, l1);
+    }
+}
+
+============================================================================
+
+q2.
+
+using System;
+class Program
+{
+    static void Main(string[] args)
+    {
+        double r, perimeter, area;
+        Console.Write("Enter radius of the circle : ");
+        r = Convert.ToDouble(Console.ReadLine());
+        perimeter = 2 * 3.14 * r;
+        area = 3.14 * Math.Pow(r, 2);
+        Console.WriteLine("perimeter of circle : {0}", perimeter);
+        Console.WriteLine("area of circle : {0}", area);
+        Console.ReadKey();
+    }
+}
+
+=============================================================================
+
+q3.
+
+using System;
+class Program
+{
+    public static void Main()
+    {
+        float distance;
+        float hour, min, sec;
+
+        float timeSec;
+        float mps;
+        float kph, mph;
+
+        Console.Write("Input distance(metres): ");
+        distance = Convert.ToSingle(Console.ReadLine());
+        Console.Write("Input timeSec(hour): ");
+        hour = Convert.ToSingle(Console.ReadLine());
+        Console.Write("Input timeSec(minutes): ");
+        min = Convert.ToSingle(Console.ReadLine());
+        Console.Write("Input timeSec(seconds): ");
+        sec = Convert.ToSingle(Console.ReadLine());
+
+        timeSec = (hour * 3600) + (min * 60) + sec;
+        kph = (distance / 1000.0f) / (timeSec / 3600.0f);
+        mph = kph / 1.609f;
+
+        Console.WriteLine("Your speed in km/h is {0}", kph);
+        Console.WriteLine("Your speed in miles/h is {0}", mph);
+    }
+}
+
+==============================================================================
+
+q4.
+
+using System;
+public class Program
+{
+    public static void Main()
+    {
+        int n1, n2;
+        bool bothEven;
+        Console.Write("Input First number: ");
+        n1 = Convert.ToInt32(Console.ReadLine());
+        Console.Write("Input Second number: ");
+        n2 = Convert.ToInt32(Console.ReadLine());
+
+        bothEven = ((n1 % 2 == 0)
+            && (n2 % 2 == 0)) ? true : false;
+
+        Console.WriteLine(bothEven ?
+          "there are numbers both Even" :
+          "there is a number odd");
+    }
+}
+
+============================================================================
+
+q5.
+
+using System;
+public class Program
+{
+    public static void Main()
+    {
+        int chk_year;
+        Console.Write("Enter year : ");
+        chk_year = Convert.ToInt32(Console.ReadLine());
+
+        if ((chk_year % 400) == 0)
+            Console.WriteLine("{0} is a leap year.\n", chk_year);
+        else if ((chk_year % 100) == 0)
+            Console.WriteLine("{0} is not a leap year.\n", chk_year);
+        else if ((chk_year % 4) == 0)
+            Console.WriteLine("{0} is a leap year.\n", chk_year);
+        else
+            Console.WriteLine("{0} is not a leap year.\n", chk_year);
+    }
+}
+
+===========================================================================
+
+q6.
+
+using System;
+public class Program
+{
+    public static void Main()
+    {
+        float height;
+        Console.WriteLine("Enter  the Height");
+        height = int.Parse(Console.ReadLine());
+        if (height < 135)
+            Console.WriteLine("short");
+        else if ((height >= 135) && (height <= 180))
+            Console.WriteLine("Average Height");
+        else
+            Console.WriteLine("Tall");
+    }
+}
+
+==========================================================================
+
+q7.
+
+
+using System;
+public class Program
+{
+    public static void Main()
+    {
+        int p, c, m;
+
+        Console.Write("Input the marks obtained in Physics :");
+        p = Convert.ToInt32(Console.ReadLine());
+        Console.Write("Input the marks obtained in Chemistry :");
+        c = Convert.ToInt32(Console.ReadLine());
+        Console.Write("Input the marks obtained in Mathematics :");
+        m = Convert.ToInt32(Console.ReadLine());
+        Console.Write("Total marks of Maths, Physics and Chemistry : {0}\n", m + p + c);
+        Console.Write("Total marks of Maths and  Physics : {0}\n", m + p);
+
+        if (m >= 65)
+            if (p >= 55)
+                if (c >= 50)
+                    if ((m + p + c) >= 180 || (m + p) >= 140)
+                        Console.Write("The  candidate is eligible for admission.\n");
+                    else
+                        Console.Write("The candidate is not eligible.\n\n");
+                else
+                    Console.Write("The candidate is not eligible.\n\n");
+            else
+                Console.Write("The candidate is not eligible.\n\n");
+        else
+            Console.Write("The candidate is not eligible.\n\n");
+    }
+}
+
+========================================================================================
+
+q8.
+
+using System;
+public class Program
+{
+    public static void Main()
+    {
+        int side1, side2, side3;
+
+        Console.Write("Input side 1 of triangle: ");
+        side1 = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Input side 2 of triangle: ");
+        side2 = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Input side 3 of triangle: ");
+        side3 = Convert.ToInt32(Console.ReadLine());
+
+        if (side1 == side2 && side2 == side3)
+        {
+            Console.WriteLine("This is an equilateral triangle.");
+        }
+        else if (side1 == side2 || side1 == side3 || side2 == side3)
+        {
+            Console.WriteLine("This is an isosceles triangle.");
+        }
+        else
+        {
+            Console.WriteLine("This is a scalene triangle.");
+        }
+    }
+}
+
+======================================================================
+
+q9.
+
+using System;
+public class Program
+{
+    public static void Main()
+    {
+        int[] arr1 = new int[50];
+        int[] arr2 = new int[50];
+        int i, n;
+
+        Console.Write("Input the number of elements to be stored in the array :");
+        n = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Input {0} elements in the array :\n", n);
+        for (i = 0; i < n; i++)
+        {
+            Console.Write("element - {0} : ", i);
+            arr1[i] = Convert.ToInt32(Console.ReadLine());
+        }
+        for (i = 0; i < n; i++)
+        {
+            arr2[i] = arr1[i];
+        }
+
+        Console.Write("\nThe elements stored in the first array are :\n");
+        for (i = 0; i < n; i++)
+        {
+            Console.Write("{0}  ", arr1[i]);
+        }
+
+        Console.Write("\n\nThe elements copied into the second array are :\n");
+        for (i = 0; i < n; i++)
+        {
+            Console.Write("{0}  ", arr2[i]);
+        }
+        Console.Write("\n\n");
+    }
+}
+
+===================================================================================
+
+q10.
+
+using System;
+public class Exercise7
+{
+    public static void Main()
+    {
+        int[] arr1 = new int[50];
+        int[] arr2 = new int[50];
+        int[] arr3 = new int[100];
+        int s1, s2, s3;
+        int i, j, k;
+
+        Console.WriteLine("Input the number of elements to be stored in the first array :");
+        s1 = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine("Input {0} elements in the array :", s1);
+        for (i = 0; i < s1; i++)
+        {
+            Console.WriteLine("element - {0} : ", i);
+            arr1[i] = Convert.ToInt32(Console.ReadLine());
+        }
+
+
+        Console.WriteLine("Input the number of elements to be stored in the second array :");
+        s2 = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine("Input {0} elements in the array :", s2);
+        for (i = 0; i < s2; i++)
+        {
+            Console.WriteLine("element - {0} : ", i);
+            arr2[i] = Convert.ToInt32(Console.ReadLine());
+        }
+
+        s3 = s1 + s2;
+
+        for (i = 0; i < s1; i++)
+        {
+            arr3[i] = arr1[i];
+        }
+        for (j = 0; j < s2; j++)
+        {
+            arr3[i] = arr2[j];
+            i++;
+        }
+
+        for (i = 0; i < s3; i++)
+        {
+            for (k = 0; k < s3 - 1; k++)
+            {
+
+                if (arr3[k] >= arr3[k + 1])
+                {
+                    j = arr3[k + 1];
+                    arr3[k + 1] = arr3[k];
+                    arr3[k] = j;
+                }
+            }
+        }
+      
+        Console.WriteLine("\nThe merged array in ascending order is :\n");
+        for (i = 0; i < s3; i++)
+        {
+            Console.WriteLine("{0} ", arr3[i]);
+        }
+    }
+}
+
+=======================================================================================
+
+q11.
+
+using System;
+public class Program
+{
+    public static void Main()
+    {
+        int[] arr1 = new int[50];
+        int[] arr2 = new int[50];
+        int[] arr3 = new int[50];
+        int i, j = 0, k = 0, n;
+
+        Console.WriteLine("Input the number of elements to be stored in the array :");
+        n = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine("Input {0} elements in the array :", n);
+        for (i = 0; i < n; i++)
+        {
+            Console.WriteLine("element - {0} : ", i);
+            arr1[i] = Convert.ToInt32(Console.ReadLine());
+        }
+
+        for (i = 0; i < n; i++)
+        {
+            if (arr1[i] % 2 == 0)
+            {
+                arr2[j] = arr1[i];
+                j++;
+            }
+            else
+            {
+                arr3[k] = arr1[i];
+                k++;
+            }
+        }
+
+        Console.WriteLine("The Even elements are : ");
+        for (i = 0; i < j; i++)
+        {
+            Console.WriteLine("{0} ", arr2[i]);
+        }
+
+        Console.WriteLine("The Odd elements are :");
+        for (i = 0; i < k; i++)
+        {
+            Console.WriteLine("{0} ", arr3[i]);
+        }
+    }
+}
+
+===============================================================================
+
+q12.
+
+using System;
+public class Program
+{
+    public static void Main()
+    {
+        string str;
+        int l = 0;
+
+        Console.WriteLine("Input : ");
+        str = Console.ReadLine();
+
+        l = str.Length - 1;
+        Console.WriteLine("The characters of the string in reverse are : \n");
+        while (l >= 0)
+        {
+            Console.WriteLine("{0} ", str[l]);
+            l--;
+        }
+    }
+}
+
+==================================================================================
+
+q13.
+
+using System;
+public class Program
+{
+    public static void Main()
+    {
+        string str1;
+        char[] arr1;
+        int l, i;
+        l = 0;
+        char ch;
+        Console.Write("Input the string : ");
+        str1 = Console.ReadLine();
+        l = str1.Length;
+        arr1 = str1.ToCharArray(0, l); 
+
+        Console.Write("\nAfter conversion, the string is : ");
+        for (i = 0; i < l; i++)
+        {
+            ch = arr1[i];
+            if (Char.IsLower(ch)) 
+                Console.Write(Char.ToUpper(ch)); 
+            else
+                Console.Write(Char.ToLower(ch)); 
+        }
+        Console.Write("\n\n");
+    }
+}
+
+===================================================================================
+
+q14.
+
+using System;
+using System.Collections;
+using System.Collections.Generic;
+namespace exercises
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            String str1;
+            str1 = "shilpppaaaa";
+            Console.WriteLine("Original String: " + str1);
+            Console.WriteLine("Length of the longest substring without repeating characters of the string:");
+            Console.WriteLine(without_repeated_chars_longest_substring(str1));
+            str1 = "priyaaaa";
+            Console.WriteLine("Original String: " + str1);
+            Console.WriteLine("Length of the longest substring without repeating characters of the string:"); ;
+            Console.WriteLine(without_repeated_chars_longest_substring(str1));
+            str1 = "Pythonn";
+            Console.WriteLine("Original String: " + str1);
+            Console.WriteLine("Length of the longest substring without repeating characters of the string:");
+            Console.WriteLine(without_repeated_chars_longest_substring(str1));
+            str1 = "Java";
+            Console.WriteLine("Original String: " + str1);
+            Console.WriteLine("Length of the longest substring without repeating characters of the string:");
+            Console.WriteLine(without_repeated_chars_longest_substring(str1));
+        }
+        public static int without_repeated_chars_longest_substring(string str1)
+        {
+            if (string.IsNullOrEmpty(str1)) return 0;
+            var map_str = new Dictionary();
+            var max_len = 0;
+            var last_repeat_pos = -1;
+            for (int i = 0; i < str1.Length; i++)
+            {
+                if (map_str.ContainsKey(str1[i]) && last_repeat_pos < map_str[str1[i]])
+                    last_repeat_pos = map_str[str1[i]];
+                if (max_len < i - last_repeat_pos)
+                    max_len = i - last_repeat_pos;
+                map_str[str1[i]] = i;
+            }
+            return max_len;
+        }
+    }
+}
